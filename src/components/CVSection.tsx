@@ -18,12 +18,9 @@ export default function CVSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-          Hehe — got you! 😄
+        <h1 className="text-1xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+          Hehe, got you!
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 font-light">
-          Welcome to my small universe.
-        </p>
       </motion.div>
 
       {/* CV Content */}
@@ -51,10 +48,7 @@ export default function CVSection() {
               About Me
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Builder of playful UX experiments and automation systems.
-              Specialized in Unity, C++, Java, and gRPC integrations. I enjoy
-              creating interactive experiences that surprise and delight users —
-              like this one!
+              Specialized in Unity, C++, Java, and gRPC integrations.
             </p>
           </div>
 
@@ -106,10 +100,6 @@ export default function CVSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <p>
-            P.S. No files were harmed in the making of this prank. Your data is
-            safe. 🛡️
-          </p>
         </motion.div>
       </motion.div>
 

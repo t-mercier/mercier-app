@@ -20,7 +20,7 @@ export default function Footer() {
     },
     {
       name: "GitHub",
-      url: "https://github.com/timotheem",
+      url: "https://github.com/t-mercier",
       icon: (
         <svg
           className="w-6 h-6"
@@ -88,7 +88,6 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <p>© 2025 Timothée Mercier. Built with Next.js & Framer Motion.</p>
-          <p className="mt-1 text-xs">mercier.app — a playful experiment</p>
         </motion.div>
       </div>
     </footer>
