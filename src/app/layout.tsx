@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "mercier.app — Will you dare to click?",
   description: "",
   icons: {
-    icon: "/favicon.ico",
+   icon: "/favicon.svg",
   },
 };
 
