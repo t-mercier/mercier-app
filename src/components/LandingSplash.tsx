@@ -7,7 +7,7 @@ interface LandingSplashProps {
 }
 export default function LandingSplash({ onEnter }: LandingSplashProps) {
   return (
-    <div className="fixed inset-0 bg-black flex flex-col items-center justify-center crt-effect relative">
+           <div className="fixed inset-0 bg-black grid place-items-center crt-effect relative">
       {/* Enter button */}
       <motion.button
         onClick={onEnter}
