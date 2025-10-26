@@ -1,41 +1,74 @@
 import { Command } from '../types';
 
 const quotes = [
+  // Nietzsche
   {
-    text: "The best way to predict the future is to invent it.",
-    author: "Alan Kay"
+    text: "One must still have chaos in oneself to be able to give birth to a dancing star.",
+    author: "Friedrich Nietzsche"
   },
   {
-    text: "Design is not just what it looks like and feels like. Design is how it works.",
-    author: "Steve Jobs"
+    text: "He who fights with monsters should look to it that he himself does not become a monster. And if you gaze long into an abyss, the abyss also gazes into you.",
+    author: "Friedrich Nietzsche"
   },
   {
-    text: "Code is like humor. When you have to explain it, it's bad.",
-    author: "Cory House"
+    text: "Without music, life would be a mistake.",
+    author: "Friedrich Nietzsche"
   },
   {
-    text: "The computer was born to solve problems that did not exist before.",
-    author: "Bill Gates"
+    text: "God is dead. God remains dead. And we have killed him.",
+    author: "Friedrich Nietzsche"
   },
   {
-    text: "Technology should serve human creativity, not replace it.",
-    author: "Timothée Mercier"
+    text: "Become what you are.",
+    author: "Friedrich Nietzsche"
   },
   {
-    text: "The best code is no code at all.",
-    author: "Jeff Atwood"
+    text: "That which does not kill us makes us stronger.",
+    author: "Friedrich Nietzsche"
+  },
+  
+  // Machiavelli
+  {
+    text: "It is better to be feared than loved, if you cannot be both.",
+    author: "Niccolò Machiavelli"
   },
   {
-    text: "Simplicity is the ultimate sophistication.",
-    author: "Leonardo da Vinci"
+    text: "The first method for estimating the intelligence of a ruler is to look at the men he has around him.",
+    author: "Niccolò Machiavelli"
   },
   {
-    text: "First, solve the problem. Then, write the code.",
-    author: "John Johnson"
+    text: "Men judge generally more by the eye than by the hand, for everyone can see and few can feel. Everyone sees what you appear to be, few really know what you are.",
+    author: "Niccolò Machiavelli"
   },
   {
-    text: "The future belongs to those who understand that the intersection of art and technology is where innovation happens.",
-    author: "Timothée Mercier"
+    text: "The wise man does at once what the fool does finally.",
+    author: "Niccolò Machiavelli"
+  },
+  
+  // Carl Jung
+  {
+    text: "Until you make the unconscious conscious, it will direct your life and you will call it fate.",
+    author: "Carl Jung"
+  },
+  {
+    text: "The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed.",
+    author: "Carl Jung"
+  },
+  {
+    text: "I am not what happened to me, I am what I choose to become.",
+    author: "Carl Jung"
+  },
+  {
+    text: "Who looks outside, dreams; who looks inside, awakes.",
+    author: "Carl Jung"
+  },
+  {
+    text: "In all chaos there is a cosmos, in all disorder a secret order.",
+    author: "Carl Jung"
+  },
+  {
+    text: "Every human being has a two-fold nature—he is at once conscious and unconscious.",
+    author: "Carl Jung"
   }
 ];
 
@@ -45,12 +78,24 @@ const quote: Command = {
   handler: (args, ctx) => {
     const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
     
+    const getThemeColor = () => {
+      if (typeof window !== 'undefined') {
+        const terminal = document.querySelector('[data-terminal]');
+        if (terminal?.classList.contains('theme-amber')) return '#ffcc66';
+        if (terminal?.classList.contains('theme-ice')) return '#9be7ff';
+      }
+      return '#00ff7f'; // default green
+    };
+    
     return (
-      <div className="space-y-3 border-l-2 border-hacker-green/30 pl-4">
+      <div 
+        className="space-y-3 border-l-2 pl-4"
+        style={{ borderColor: `${getThemeColor()}30` }}
+      >
         <div className="text-gray-300 italic text-lg">
           &ldquo;{randomQuote.text}&rdquo;
         </div>
-        <div className="text-hacker-green text-sm">
+        <div className="text-sm" style={{ color: getThemeColor() }}>
           — {randomQuote.author}
         </div>
       </div>
@@ -59,3 +104,4 @@ const quote: Command = {
 };
 
 export default quote;
+
