@@ -20,9 +20,8 @@ const about: Command = {
           </p>
           <p>
             Currently working at <span className="text-hacker-green">TomTom</span> on core 
-            navigation services, I focus on building systems that are both performant and 
-            intuitive. My background in creative direction helps me think beyond pure 
-            functionality to consider user experience and narrative.
+            navigation services, I focus on building and maintaining our premium map rendering engine. 
+            My background in creative direction helps me think beyond pure functionality to consider user experience and narrative.
           </p>
           <p>
             When I&apos;m not working, I&apos;m coding apps for myself to make my life easier, 

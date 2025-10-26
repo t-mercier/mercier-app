@@ -1,27 +1,14 @@
 [
   {
     "title": "TomTom Navigation Platform",
-    "role": "Senior Software Engineer",
-    "period": "2024 - Present",
-    "stack": ["C++", "Java", "gRPC", "Protobuf", "Docker", "CI/CD"],
-    "highlights": [
-      "Building core navigation services for millions of users",
-      "Implementing high-performance routing algorithms",
-      "Designing scalable microservice architecture"
-    ],
-    "description": "Working on the core navigation platform that powers TomTom's consumer and enterprise products, focusing on performance, scalability, and reliability."
-  },
-  {
-    "title": "Unity Map Visualization Engine",
-    "role": "Technical Lead",
+    "role": "Software Engineer II",
     "period": "2023",
-    "stack": ["Unity", "C#", "C++", "OpenGL", "GIS"],
+    "stack": ["Unity", "C#", "Kotlin", "gRPC", "Protobuf", "Docker", "CI/CD"],
     "highlights": [
       "Real-time 3D map rendering for mobile devices",
-      "Custom shader development for terrain visualization",
       "Integration with mapping APIs and data sources"
     ],
-    "description": "Led development of a Unity-based engine for interactive 3D map visualization, optimized for mobile performance and cross-platform compatibility."
+    "description": "Development of a Unity-based engine for interactive 3D map visualization, optimized for mobile performance and cross-platform compatibility."
   },
   {
     "title": "42 School Projects",
