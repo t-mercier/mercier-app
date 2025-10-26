@@ -114,7 +114,7 @@ export default function HackerOverlay({
 
   if (showGotYou) {
     return (
-      <div className="fixed inset-0 bg-black flex items-center justify-center crt-effect">
+      <div className="fixed inset-0 bg-black flex items-center justify-center crt-effect" style={{ height: '100vh' }}>
         <motion.div
           className="text-center"
           initial={{ opacity: 0, scale: 0.8 }}
@@ -123,6 +123,9 @@ export default function HackerOverlay({
         >
           <p className="text-xl md:text-3xl font-mono text-hacker-green">
             got you ... :)
+          </p>
+          <p className="text-sm text-gray-500 font-mono mt-4">
+            Loading terminal...
           </p>
         </motion.div>
       </div>
@@ -133,6 +136,7 @@ export default function HackerOverlay({
     return (
       <div
         className="fixed inset-0 bg-black flex items-center justify-center crt-effect chaos-mode"
+        style={{ height: '100vh' }}
         role="dialog"
         aria-label="System glitch animation"
       >
@@ -190,12 +194,6 @@ export default function HackerOverlay({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <button
-                onClick={onReveal}
-                className="px-6 py-3 bg-hacker-green text-black font-mono font-bold text-lg hover:bg-white transition-colors duration-200 shadow-[0_0_30px_rgba(0,255,0,0.8)]"
-              >
-                REVEAL THE TRUTH
-              </button>
               <p className="text-xs text-center text-gray-500 mt-2">
                 (or press ESC)
               </p>

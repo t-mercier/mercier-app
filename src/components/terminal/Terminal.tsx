@@ -182,11 +182,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
 
   // Don't render until mounted on client
   if (!mounted) {
-    return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
-        <div className="text-hacker-green font-mono">Loading terminal...</div>
-      </div>
-    );
+    return null;
   }
 
   return (

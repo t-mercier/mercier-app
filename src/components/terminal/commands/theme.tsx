@@ -30,8 +30,8 @@ const theme: Command = {
                 className="w-4 h-4 border border-current"
                 style={{ backgroundColor: theme.color }}
               ></span>
-              <span className="text-gray-300">
-                <span className="font-mono">{theme.name}</span> - {theme.description}
+              <span className="text-gray-300 font-mono">
+                {theme.name}
               </span>
             </div>
           ))}
