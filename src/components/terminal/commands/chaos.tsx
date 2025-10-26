@@ -4,15 +4,7 @@ const chaos: Command = {
   name: 'chaos',
   description: 'Brief glitch effect with randomized colors and text jitter',
   handler: (args, ctx) => {
-    // Check if user prefers reduced motion (client-side only)
-    if (typeof window === 'undefined') {
-      return (
-        <div className="text-gray-400">
-          Chaos mode requires client-side execution.
-        </div>
-      );
-    }
-    
+    // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (prefersReducedMotion) {

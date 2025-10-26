@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useState, useMemo } from 'react';
 import { useTerminalState } from './useTerminalState';
 import { findCommand } from './commands';
 import { parseCommand, getAutocompleteSuggestions } from './Autocomplete';
@@ -50,7 +50,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
   }, [updateInput, setCursorPosition, baseContext]);
 
   // Create context with executeCommand
-  const context = { ...baseContext, executeCommand: handleExecuteCommand };
+  const context = useMemo(() => ({ ...baseContext, executeCommand: handleExecuteCommand }), [baseContext, handleExecuteCommand]);
 
   const outputRef = useRef<HTMLDivElement>(null);
   const terminalRef = useRef<HTMLDivElement>(null);

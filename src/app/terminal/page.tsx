@@ -1,6 +1,9 @@
-import dynamic from 'next/dynamic';
+import dynamicImport from 'next/dynamic';
 
-const Terminal = dynamic(() => import('@/components/terminal/Terminal'), {
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+
+const Terminal = dynamicImport(() => import('@/components/terminal/Terminal'), {
   ssr: false,
   loading: () => (
     <div className="min-h-screen bg-black flex items-center justify-center">

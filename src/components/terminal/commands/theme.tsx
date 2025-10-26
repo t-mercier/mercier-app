@@ -28,34 +28,13 @@ const theme: Command = {
         <div className="space-y-2">
           <div className="text-hacker-green font-bold">Available themes:</div>
           {Object.values(themes).map((theme) => (
-            <div 
-              key={theme.name} 
-              className="flex items-center space-x-3 cursor-pointer rounded px-2 py-1 -mx-2 transition-colors"
-              onMouseEnter={(e) => {
-                const terminal = document.querySelector('[data-terminal]');
-                if (terminal?.classList.contains('theme-amber')) {
-                  e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.1)';
-                } else if (terminal?.classList.contains('theme-ice')) {
-                  e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.1)';
-                } else {
-                  e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.05)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}
-              onClick={() => {
-                if (ctx.executeCommand) {
-                  ctx.executeCommand(`theme ${theme.name}`);
-                }
-              }}
-            >
+            <div key={theme.name} className="flex items-center space-x-3">
               <span 
                 className="w-4 h-4 border border-current"
                 style={{ backgroundColor: theme.color }}
               ></span>
               <span className="text-gray-300">
-                <span className="font-mono font-bold">{theme.name}</span> - {theme.description}
+                <span className="font-mono">{theme.name}</span> - {theme.description}
               </span>
             </div>
           ))}
