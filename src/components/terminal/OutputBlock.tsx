@@ -3,15 +3,22 @@ import { OutputBlock as OutputBlockType } from './types';
 
 interface OutputBlockProps {
   block: OutputBlockType;
+  theme: string;
 }
 
-export default function OutputBlock({ block }: OutputBlockProps) {
+export default function OutputBlock({ block, theme }: OutputBlockProps) {
   const getThemeColor = () => {
-    const terminal = document.querySelector('[data-terminal]');
-    if (terminal?.classList.contains('theme-amber')) return 'var(--terminal-color)';
-    if (terminal?.classList.contains('theme-ice')) return 'var(--terminal-color)';
+    if (theme === 'amber') return '#ffcc66';
+    if (theme === 'ice') return '#9be7ff';
     return '#00ff7f'; // default green
   };
+  
+  const getThemeBorderColor = () => {
+    if (theme === 'amber') return 'rgba(255, 204, 102, 0.3)';
+    if (theme === 'ice') return 'rgba(155, 231, 255, 0.3)';
+    return 'rgba(0, 255, 127, 0.3)'; // default green
+  };
+
   const [showCopyButton, setShowCopyButton] = useState(false);
 
   const handleCopy = async () => {
@@ -47,14 +54,7 @@ export default function OutputBlock({ block }: OutputBlockProps) {
       style={{ borderColor: 'transparent' }}
       onMouseEnter={(e) => {
         setShowCopyButton(true);
-        const terminal = document.querySelector('[data-terminal]');
-        if (terminal?.classList.contains('theme-amber')) {
-          e.currentTarget.style.borderColor = 'rgba(255, 204, 102, 0.3)';
-        } else if (terminal?.classList.contains('theme-ice')) {
-          e.currentTarget.style.borderColor = 'rgba(155, 231, 255, 0.3)';
-        } else {
-          e.currentTarget.style.borderColor = 'rgba(0, 255, 127, 0.3)';
-        }
+        e.currentTarget.style.borderColor = getThemeBorderColor();
       }}
       onMouseLeave={(e) => {
         setShowCopyButton(false);
@@ -71,30 +71,36 @@ export default function OutputBlock({ block }: OutputBlockProps) {
         <div>
           {block.node}
         </div>
-        <div className="text-xs mt-1" style={{ color: 'var(--terminal-color)' }}>
+        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button
+            onClick={handleCopy}
+            className="px-2 py-1 text-xs border rounded bg-black/50 transition-colors"
+            style={{ 
+              borderColor: getThemeColor(),
+              color: getThemeColor()
+            }}
+            onMouseEnter={(e) => {
+              const themeColor = getThemeColor();
+              if (theme === 'amber') {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.2)';
+              } else if (theme === 'ice') {
+                e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.2)';
+              } else {
+                e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.2)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            }}
+            aria-label="Copy to clipboard"
+          >
+            Copy
+          </button>
+        </div>
+        <div className="text-xs text-gray-500 mt-2" style={{ color: getThemeColor() }}>
           {block.timestamp.toLocaleTimeString()}
         </div>
       </div>
-      
-      <button
-        onClick={handleCopy}
-        className={`absolute top-2 right-2 px-2 py-1 text-xs bg-black border transition-colors ${
-          showCopyButton ? 'opacity-100' : 'opacity-0'
-        }`}
-        style={{ 
-          borderColor: `var(--terminal-color)`,
-          color: `var(--terminal-color)`
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = `rgba(${getThemeColor() === 'var(--terminal-color)' ? '255, 204, 102' : '155, 231, 255'}, 0.1)`;
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = '';
-        }}
-        aria-label="Copy output to clipboard"
-      >
-        Copy
-      </button>
     </div>
   );
 }

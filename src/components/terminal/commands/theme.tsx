@@ -15,6 +15,12 @@ const themes = {
   }
 };
 
+const getThemeColor = (theme: string) => {
+  if (theme === 'amber') return '#ffcc66';
+  if (theme === 'ice') return '#9be7ff';
+  return '#00ff7f'; // default green
+};
+
 const theme: Command = {
   name: 'theme',
   description: 'Change terminal color theme',
@@ -23,20 +29,33 @@ const theme: Command = {
     if (args.length === 0) {
       return (
         <div className="space-y-2">
-          <div className="text-hacker-green font-bold">Available themes:</div>
-          {Object.values(themes).map((theme) => (
-            <div key={theme.name} className="flex items-center space-x-3">
+          <div className="font-bold" style={{ color: getThemeColor(ctx.theme) }}>
+            Available themes:
+          </div>
+          {Object.values(themes).map((themeOption) => (
+            <div 
+              key={themeOption.name} 
+              className="flex items-center space-x-3 cursor-pointer hover:opacity-80 transition-opacity"
+              onClick={() => {
+                if (ctx.executeCommand) {
+                  ctx.executeCommand(`theme ${themeOption.name}`);
+                }
+              }}
+            >
               <span 
                 className="w-4 h-4 border border-current"
-                style={{ backgroundColor: theme.color }}
+                style={{ backgroundColor: themeOption.color }}
               ></span>
-              <span className="text-gray-300 font-mono">
-                {theme.name}
+              <span 
+                className="font-mono"
+                style={{ color: getThemeColor(ctx.theme) }}
+              >
+                {themeOption.name}
               </span>
             </div>
           ))}
           <div className="text-gray-400 text-sm mt-2">
-            Current theme: <span className="font-mono text-hacker-green">{ctx.theme}</span>
+            Current theme: <span className="font-mono" style={{ color: getThemeColor(ctx.theme) }}>{ctx.theme}</span>
           </div>
         </div>
       );
@@ -46,7 +65,7 @@ const theme: Command = {
     if (themeName in themes) {
       ctx.setTheme(themeName);
       return (
-        <div className="text-hacker-green">
+        <div style={{ color: getThemeColor(themeName) }}>
           Theme changed to <span className="font-mono">{themeName}</span>
         </div>
       );

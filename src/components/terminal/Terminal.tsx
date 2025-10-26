@@ -244,7 +244,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
           )}
           
           {state.output.map((block) => (
-            <OutputBlock key={block.id} block={block} />
+            <OutputBlock key={block.id} block={block} theme={state.theme} />
           ))}
         </div>
       </div>

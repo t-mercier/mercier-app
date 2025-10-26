@@ -55,10 +55,9 @@ export default function Prompt({
   };
 
   const getThemeColor = () => {
-    const terminal = document.querySelector('[data-terminal]');
-    if (terminal?.classList.contains('theme-amber')) return '#ffcc66';
-    if (terminal?.classList.contains('theme-ice')) return '#9be7ff';
-    return '#00ff7f'; // default green
+    if (theme === "amber") return "#ffcc66";
+    if (theme === "ice") return "#9be7ff";
+    return "#00ff7f"; // default green
   };
 
   return (
