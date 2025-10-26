@@ -25,6 +25,11 @@ export default function Terminal({ className = '' }: TerminalProps) {
     context: baseContext,
   } = useTerminalState();
 
+  // Create a ref to store the latest context
+  const contextRef = useRef(baseContext);
+  contextRef.current = baseContext;
+  
+  // Create handleExecuteCommand
   const handleExecuteCommand = useCallback((command: string) => {
     updateInput(command);
     setCursorPosition(command.length);
@@ -33,21 +38,22 @@ export default function Terminal({ className = '' }: TerminalProps) {
       const { command: cmdName, args } = parseCommand(command);
       const cmd = findCommand(cmdName);
       if (cmd) {
-        const result = cmd.handler(args, { ...baseContext, executeCommand: handleExecuteCommand });
+        const currentContext = contextRef.current;
+        const result = cmd.handler(args, { ...currentContext, executeCommand: handleExecuteCommand });
         if (result !== null) {
           if (result instanceof Promise) {
             result.then((resolvedResult) => {
               if (resolvedResult !== null) {
-                baseContext.addOutput(resolvedResult, command);
+                currentContext.addOutput(resolvedResult, command);
               }
             });
           } else {
-            baseContext.addOutput(result, command);
+            currentContext.addOutput(result, command);
           }
         }
       }
     }, 0);
-  }, [updateInput, setCursorPosition, baseContext]);
+  }, [updateInput, setCursorPosition]);
 
   // Create context with executeCommand
   const context = useMemo(() => ({ ...baseContext, executeCommand: handleExecuteCommand }), [baseContext, handleExecuteCommand]);
