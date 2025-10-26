@@ -25,9 +25,9 @@ const about: Command = {
             functionality to consider user experience and narrative.
           </p>
           <p>
-            When I&apos;m not coding, you&apos;ll find me exploring Amsterdam&apos;s creative scene, 
-            experimenting with Unity for interactive experiences, or mentoring at 
-            <span className="text-hacker-green"> 42 School</span>.
+            When I&apos;m not working, I&apos;m coding apps for myself to make my life easier, 
+            exploring the beauty of AI, or doing any kind of craft, DIY, interior design, 
+            or creating any kind of stuff.
           </p>
         </div>
         <div className="text-gray-400 text-sm border-t border-gray-800 pt-4">
