@@ -26,7 +26,6 @@ const theme: Command = {
   description: 'Change terminal color theme',
   usage: 'theme [green|amber|ice]',
   handler: (args, ctx) => {
-    console.log('theme handler - current theme:', ctx.theme);
     if (args.length === 0) {
       return (
         <div className="space-y-2">
