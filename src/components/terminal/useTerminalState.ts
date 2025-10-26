@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useMemo } from 'react';
 import { TerminalState, TerminalContext, OutputBlock } from './types';
 
 export function useTerminalState() {
@@ -106,12 +106,12 @@ export function useTerminalState() {
     setState(prev => ({ ...prev, showAutocomplete: show }));
   }, []);
 
-  const context: TerminalContext = {
+  const context: TerminalContext = useMemo(() => ({
     theme: state.theme,
     setTheme,
     clearOutput,
     addOutput,
-  };
+  }), [state.theme, setTheme, clearOutput, addOutput]);
 
   return {
     state,
