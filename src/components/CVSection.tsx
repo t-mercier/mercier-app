@@ -18,9 +18,6 @@ export default function CVSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <h1 className="text-1xl md:text-2xl font-bold mb-4 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
-          Hehe, got you!
-        </h1>
       </motion.div>
 
       {/* CV Content */}

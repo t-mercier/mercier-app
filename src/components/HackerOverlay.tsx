@@ -113,6 +113,24 @@ export default function HackerOverlay({
   }
 
   if (showGotYou) {
+        const hackerArt = `
+
+⠀⠀⠀⠀⠀⠀⠀⢀⣠⡤⠐⠊⠉⠉⠀⠀⠈⠑⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠖⠢⡀⠹⣄⠀⠀⠀⠀
+⠀⠀⠀⡤⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠊⠀⠀⣾⣿⣦⠫⡆⠀⠀⠀
+⠀⢀⡏⠀⢀⠴⠂⠉⠐⢦⣄⠀⠀⠀⡇⠀⠀⠀⠀⠉⠁⢣⠰⡀⠀⠀
+⢰⢈⠃⠀⣿⣷⠄⠀⠀⠈⢸⠃⠀⠀⠈⢦⡀⠀⠀⠀⠀⠸⠀⢯⡄⠀
+⢸⠏⠀⠀⢻⠁⠀⠀⠀⡠⠊⠀⠀⠀⠀⠀⠈⠁⠐⠒⠊⠀⠀⠈⣼⠀
+⢸⠀⠀⠀⠈⠢⠤⠤⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹
+⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢃⡆⠀⠀⠀⠀⠀⠀⠀⠀⠘⣧⡀⠀⠀⠀⣸⠀⠀⠀⠀⠀⠀⠀⡆
+⠀⠈⢻⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠋⠁⠀⠀⠀⠀⠀⠀⣠⠃
+⠀⠀⠘⡳⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠋⠀
+
+    `;
+
     return (
       <div className="fixed inset-0 bg-black flex items-center justify-center crt-effect" style={{ height: '100vh' }}>
         <motion.div
@@ -121,11 +139,14 @@ export default function HackerOverlay({
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xl md:text-3xl font-mono text-hacker-green">
-            got you ... :)
+          <pre className="text-xs md:text-sm font-mono text-hacker-green whitespace-pre">
+            {hackerArt}
+          </pre>
+          <p className="text-sm font-mono text-hacker-green mt-4">
+            got you !
           </p>
-          <p className="text-sm text-gray-500 font-mono mt-4">
-            Loading terminal...
+          <p className="text-xs text-gray-400 font-mono mt-2">
+            &gt; Loading terminal...
           </p>
         </motion.div>
       </div>
@@ -194,9 +215,6 @@ export default function HackerOverlay({
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-xs text-center text-gray-500 mt-2">
-                (or press ESC)
-              </p>
             </motion.div>
           )}
         </AnimatePresence>

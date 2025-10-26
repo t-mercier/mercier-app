@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code" });
 
 export const metadata: Metadata = {
-  title: "mercier.app — Will you dare to click?",
+  title: "mercier.app | Will you dare to click?",
   description: "",
   icons: {
    icon: "/favicon.svg",
