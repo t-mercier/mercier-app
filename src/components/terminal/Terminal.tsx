@@ -173,6 +173,13 @@ export default function Terminal({ className = '' }: TerminalProps) {
   // Apply theme class to terminal
   const themeClass = `theme-${state.theme}`;
   
+  // Get theme color
+  const getThemeColor = () => {
+    if (state.theme === 'amber') return '#ffcc66';
+    if (state.theme === 'ice') return '#9be7ff';
+    return '#00ff7f'; // default green
+  };
+  
   // Get theme color for border
   const getThemeBorderColor = () => {
     if (state.theme === 'amber') return 'rgba(255, 204, 102, 0.3)';
@@ -207,12 +214,26 @@ export default function Terminal({ className = '' }: TerminalProps) {
           {/* Welcome message on first load */}
           {state.output.length === 0 && (
             <div className="space-y-2">
-              <div className="text-hacker-green font-bold">
-                mercier.app@:~$
+              <div className="font-bold" style={{ color: getThemeColor() }}>
+                mercier.app@git add -A && git commit -m "fix: make welcome message and help link use dynamic theme colors
+
+- Welcome message title now uses getThemeColor() instead of hardcoded green
+- Help link color and hover background now adapt to theme
+- All colors now properly update when theme changes without hover" && git push:~$
               </div>
               <div className="text-gray-300">
                 Type <span 
-                  className="text-green-400 font-mono font-bold bg-green-400/5 px-1 py-0.5 rounded cursor-pointer hover:bg-green-400/10 transition-colors"
+                  className="font-mono font-bold px-1 py-0.5 rounded cursor-pointer transition-colors"
+                  style={{ 
+                    color: getThemeColor(),
+                    backgroundColor: `${getThemeColor()}10`
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = `${getThemeColor()}20`;
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = `${getThemeColor()}10`;
+                  }}
                   onClick={() => {
                     if (context.executeCommand) {
                       context.executeCommand('help');
