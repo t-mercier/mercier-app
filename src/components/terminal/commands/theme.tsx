@@ -3,17 +3,14 @@ import { Command } from '../types';
 const themes = {
   green: {
     name: 'green',
-    description: 'Classic hacker green theme',
     color: '#00ff7f'
   },
   amber: {
     name: 'amber', 
-    description: 'Warm amber terminal theme',
     color: '#ffcc66'
   },
   ice: {
     name: 'ice',
-    description: 'Cool ice blue theme', 
     color: '#9be7ff'
   }
 };

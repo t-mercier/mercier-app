@@ -1,66 +1,42 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface HackerOverlayProps {
   onReveal: () => void;
   onEscape: () => void;
 }
 
-const hackerMessages = [
-  "> Initializing connection...",
-  "> Connecting to remote host 192.168.1.1...",
-  "> Connection established.",
-  "> Accessing system files...",
-  "> !!! WARNING: FILESYSTEM CORRUPTED !!!",
-  "> Error: Access denied. Retrying...",
-  "> Access granted.",
-  "> Deleting user data...",
-  "> Encrypting C:\\ drive...",
-  "> /dev/sda1: Encryption in progress...",
-  "> !!! CRITICAL ERROR !!!",
-  "> ALL FILES WILL BE REMOVED IN: 00:00:10",
-  "> 00:00:09",
-  "> 00:00:08",
-  "> 00:00:07",
-  "> 00:00:06",
-  "> 00:00:05",
-  "> 00:00:04",
-  "> 00:00:03",
-  "> 00:00:02",
-  "> 00:00:01",
-  "> 00:00:00",
-];
-
 export default function HackerOverlay({
   onReveal,
   onEscape,
 }: HackerOverlayProps) {
-  const [messages, setMessages] = useState<string[]>([]);
-  const [showReveal, setShowReveal] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [showGotYou, setShowGotYou] = useState(false);
   const [escaped, setEscaped] = useState(false);
 
   useEffect(() => {
-    let messageIndex = 0;
-    const interval = setInterval(() => {
-      if (messageIndex < hackerMessages.length) {
-        setMessages((prev) => [...prev, hackerMessages[messageIndex]]);
-        messageIndex++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 350);
+    // Loading bar animation (5 seconds)
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 2; // 100 / 50 = 2% per interval, 50 intervals over 5 seconds
+      });
+    }, 100);
 
-    // Show reveal button after 8 seconds
+    // After 5 seconds, show "got you" message
+    const gotYouTimeout = setTimeout(() => {
+      setShowGotYou(true);
+    }, 5000);
+
+    // After 8 seconds (5s loading + 3s got you), show terminal
     const revealTimeout = setTimeout(() => {
-      setShowReveal(true);
-    }, 8000);
-
-    // Auto-reveal after 10 seconds
-    const autoRevealTimeout = setTimeout(() => {
       onReveal();
-    }, 10000);
+    }, 8000);
 
     // Handle ESC key
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -75,9 +51,9 @@ export default function HackerOverlay({
     document.addEventListener("keydown", handleKeyDown);
 
     return () => {
-      clearInterval(interval);
+      clearInterval(progressInterval);
+      clearTimeout(gotYouTimeout);
       clearTimeout(revealTimeout);
-      clearTimeout(autoRevealTimeout);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onReveal, onEscape]);
@@ -92,10 +68,27 @@ export default function HackerOverlay({
           transition={{ duration: 0.5 }}
         >
           <p className="text-2xl md:text-4xl font-mono text-hacker-green text-glow-green">
-            You escaped fullscreen! 🏃
+            You escaped! 🏃
           </p>
           <p className="text-sm text-gray-400 font-mono mt-4">
-            Smart move... redirecting to safety...
+            Redirecting to safety...
+          </p>
+        </motion.div>
+      </div>
+    );
+  }
+
+  if (showGotYou) {
+    return (
+      <div className="fixed inset-0 bg-black flex items-center justify-center crt-effect">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="text-xl md:text-3xl font-mono text-hacker-green">
+            got you ... :)
           </p>
         </motion.div>
       </div>
@@ -104,53 +97,38 @@ export default function HackerOverlay({
 
   return (
     <div
-      className="fixed inset-0 bg-black overflow-y-auto crt-effect"
+      className="fixed inset-0 bg-black flex items-center justify-center crt-effect"
       role="dialog"
-      aria-label="Hacker overlay animation"
+      aria-label="Erasing data animation"
     >
-      <div className="min-h-screen p-6 md:p-12 font-mono text-hacker-green text-sm md:text-base">
-        {messages.filter(msg => msg).map((msg, index) => (
+      <div className="text-center">
+        <motion.p
+          className="text-xl md:text-2xl font-mono text-hacker-green mb-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          erasing data...
+        </motion.p>
+        
+        <div className="w-64 md:w-96 h-6 bg-gray-900 border border-hacker-green rounded overflow-hidden">
           <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.1 }}
-            className={
-              msg?.includes("WARNING") || msg?.includes("ERROR")
-                ? "text-red-500 font-bold text-glow-green-strong"
-                : msg?.includes("00:00")
-                ? "text-yellow-400 font-bold"
-                : ""
-            }
-          >
-            {msg}
-            {index === messages.filter(m => m).length - 1 && (
-              <span className="inline-block animate-blink ml-1">▋</span>
-            )}
-          </motion.div>
-        ))}
-
-        <AnimatePresence>
-          {showReveal && (
-            <motion.div
-              className="fixed bottom-12 left-1/2 transform -translate-x-1/2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <button
-                onClick={onReveal}
-                className="px-6 py-3 bg-hacker-green text-black font-mono font-bold text-lg hover:bg-white transition-colors duration-200 shadow-[0_0_30px_rgba(0,255,0,0.8)]"
-              >
-                REVEAL THE TRUTH
-              </button>
-              <p className="text-xs text-center text-gray-500 mt-2">
-                (or press ESC)
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            className="h-full bg-hacker-green"
+            initial={{ width: 0 }}
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.1, ease: "linear" }}
+            style={{ boxShadow: '0 0 20px #00ff7f' }}
+          />
+        </div>
+        
+        <motion.p
+          className="text-sm text-gray-500 font-mono mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          {progress}%
+        </motion.p>
       </div>
     </div>
   );
