@@ -13,7 +13,10 @@ const contact: Command = {
             <span className="text-hacker-green font-mono min-w-0">email</span>
             <a 
               href={`mailto:${linksData.email}`}
-              className="text-gray-300 hover:text-hacker-green transition-colors"
+              className="text-gray-300 transition-colors"
+              style={{ '--hover-color': 'var(--terminal-color)' } as React.CSSProperties}
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--terminal-color)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(209, 213, 219)'}
             >
               {linksData.email}
             </a>
@@ -24,7 +27,9 @@ const contact: Command = {
               href={linksData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-hacker-green transition-colors"
+              className="text-gray-300 transition-colors"
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--terminal-color)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(209, 213, 219)'}
             >
               {linksData.linkedin}
             </a>
@@ -35,20 +40,11 @@ const contact: Command = {
               href={linksData.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-300 hover:text-hacker-green transition-colors"
+              className="text-gray-300 transition-colors"
+              onMouseEnter={(e) => e.currentTarget.style.color = 'var(--terminal-color)'}
+              onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(209, 213, 219)'}
             >
               {linksData.github}
-            </a>
-          </div>
-          <div className="flex items-center space-x-3">
-            <span className="text-hacker-green font-mono min-w-0">twitter</span>
-            <a 
-              href={linksData.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-hacker-green transition-colors"
-            >
-              {linksData.twitter}
             </a>
           </div>
         </div>

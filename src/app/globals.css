@@ -123,11 +123,94 @@ body {
 }
 
 .theme-amber {
-  --tw-text-amber: var(--terminal-color);
+  --tw-text-hacker-green: var(--terminal-color);
 }
 
 .theme-ice {
-  --tw-text-ice: var(--terminal-color);
+  --tw-text-hacker-green: var(--terminal-color);
+}
+
+/* Override text colors for theme switching */
+.theme-amber .text-hacker-green {
+  color: var(--terminal-color) !important;
+}
+
+.theme-ice .text-hacker-green {
+  color: var(--terminal-color) !important;
+}
+
+.theme-amber .text-green-400 {
+  color: var(--terminal-color) !important;
+}
+
+.theme-ice .text-green-400 {
+  color: var(--terminal-color) !important;
+}
+
+.theme-amber .text-green-600 {
+  color: var(--terminal-color) !important;
+}
+
+.theme-ice .text-green-600 {
+  color: var(--terminal-color) !important;
+}
+
+.theme-amber .border-hacker-green {
+  border-color: var(--terminal-color) !important;
+}
+
+.theme-ice .border-hacker-green {
+  border-color: var(--terminal-color) !important;
+}
+
+/* Cursor color */
+.theme-amber .caret-hacker-green {
+  caret-color: var(--terminal-color) !important;
+}
+
+.theme-ice .caret-hacker-green {
+  caret-color: var(--terminal-color) !important;
+}
+
+/* Hover and focus states - removed complex selectors */
+
+/* Terminal scrollbar */
+.theme-amber .terminal::-webkit-scrollbar-thumb {
+  background: rgba(255, 204, 102, 0.3) !important;
+}
+
+.theme-amber .terminal::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 204, 102, 0.5) !important;
+}
+
+.theme-ice .terminal::-webkit-scrollbar-thumb {
+  background: rgba(155, 231, 255, 0.3) !important;
+}
+
+.theme-ice .terminal::-webkit-scrollbar-thumb:hover {
+  background: rgba(155, 231, 255, 0.5) !important;
+}
+
+/* Border left for blockquotes and sections - using data attributes for safety */
+
+/* Command prompt $ symbol */
+.theme-amber span.text-hacker-green.font-mono {
+  color: var(--terminal-color) !important;
+}
+
+.theme-ice span.text-hacker-green.font-mono {
+  color: var(--terminal-color) !important;
+}
+
+/* Link hover colors - comprehensive override */
+.theme-amber a:hover,
+.theme-amber button:hover {
+  color: var(--terminal-color) !important;
+}
+
+.theme-ice a:hover,
+.theme-ice button:hover {
+  color: var(--terminal-color) !important;
 }
 
 /* CRT Scanlines for terminal */

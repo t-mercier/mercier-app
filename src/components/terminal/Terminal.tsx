@@ -172,6 +172,13 @@ export default function Terminal({ className = '' }: TerminalProps) {
 
   // Apply theme class to terminal
   const themeClass = `theme-${state.theme}`;
+  
+  // Get theme color for border
+  const getThemeBorderColor = () => {
+    if (state.theme === 'amber') return 'rgba(255, 204, 102, 0.3)';
+    if (state.theme === 'ice') return 'rgba(155, 231, 255, 0.3)';
+    return 'rgba(0, 255, 127, 0.3)'; // default green
+  };
 
   // Don't render until mounted on client
   if (!mounted) {
@@ -230,7 +237,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
       </div>
 
       {/* Input area */}
-      <div className="fixed bottom-0 left-0 right-0 bg-black border-t border-hacker-green/30 p-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-black border-t p-4" style={{ borderColor: getThemeBorderColor() }}>
         <Prompt
           input={state.input}
           cursorPosition={state.cursorPosition}

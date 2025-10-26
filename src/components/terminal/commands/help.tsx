@@ -45,14 +45,56 @@ const help: Command = {
           {registry.map((cmd) => (
             <div 
               key={cmd.name} 
-              className="flex items-start space-x-2 group cursor-pointer hover:bg-hacker-green/5 rounded px-1 py-0.5 -mx-1 transition-colors"
+              className="flex items-start space-x-2 group cursor-pointer rounded px-1 py-0.5 -mx-1 transition-colors"
+              style={{
+                backgroundColor: 'rgba(var(--theme-color-rgb), 0.05)'
+              }}
+              onMouseEnter={(e) => {
+                const terminal = document.querySelector('[data-terminal]');
+                if (terminal?.classList.contains('theme-amber')) {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.1)';
+                } else if (terminal?.classList.contains('theme-ice')) {
+                  e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.1)';
+                } else {
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.05)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'rgba(var(--theme-color-rgb), 0.05)';
+              }}
               onClick={() => {
                 if (ctx.executeCommand) {
                   ctx.executeCommand(cmd.name);
                 }
               }}
             >
-              <span className="text-green-400 font-mono min-w-0 flex-shrink-0 font-bold bg-green-400/5 group-hover:bg-green-400/10 px-1 py-0.5 rounded transition-colors">
+              <span 
+                className="text-green-400 font-mono min-w-0 flex-shrink-0 font-bold px-1 py-0.5 rounded transition-colors"
+                style={{ 
+                  backgroundColor: 'rgba(0, 255, 127, 0.05)',
+                  color: 'var(--terminal-color)'
+                }}
+                onMouseEnter={(e) => {
+                  const terminal = document.querySelector('[data-terminal]');
+                  if (terminal?.classList.contains('theme-amber')) {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.1)';
+                  } else if (terminal?.classList.contains('theme-ice')) {
+                    e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.1)';
+                  } else {
+                    e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.1)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  const terminal = document.querySelector('[data-terminal]');
+                  if (terminal?.classList.contains('theme-amber')) {
+                    e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.05)';
+                  } else if (terminal?.classList.contains('theme-ice')) {
+                    e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.05)';
+                  } else {
+                    e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.05)';
+                  }
+                }}
+              >
                 {cmd.name}
               </span>
               <span className="text-green-600 flex-1">

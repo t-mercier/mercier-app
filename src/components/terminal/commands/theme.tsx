@@ -30,7 +30,20 @@ const theme: Command = {
           {Object.values(themes).map((theme) => (
             <div 
               key={theme.name} 
-              className="flex items-center space-x-3 cursor-pointer hover:bg-hacker-green/5 rounded px-2 py-1 -mx-2 transition-colors"
+              className="flex items-center space-x-3 cursor-pointer rounded px-2 py-1 -mx-2 transition-colors"
+              onMouseEnter={(e) => {
+                const terminal = document.querySelector('[data-terminal]');
+                if (terminal?.classList.contains('theme-amber')) {
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 204, 102, 0.1)';
+                } else if (terminal?.classList.contains('theme-ice')) {
+                  e.currentTarget.style.backgroundColor = 'rgba(155, 231, 255, 0.1)';
+                } else {
+                  e.currentTarget.style.backgroundColor = 'rgba(0, 255, 127, 0.05)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }}
               onClick={() => {
                 if (ctx.executeCommand) {
                   ctx.executeCommand(`theme ${theme.name}`);
