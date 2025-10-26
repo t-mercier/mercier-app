@@ -1,0 +1,42 @@
+{
+  "design": {
+    "title": "Design & Creative Direction",
+    "skills": [
+      "Art Direction",
+      "Branding & Identity",
+      "Event Experience Design",
+      "Storytelling & Narrative",
+      "Visual Communication",
+      "User Experience Design",
+      "Creative Strategy"
+    ]
+  },
+  "engineering": {
+    "title": "Engineering & Development",
+    "skills": [
+      "C & C++",
+      "Java",
+      "Unity Engine",
+      "gRPC & Protobuf",
+      "CI/CD & DevOps",
+      "Docker & Containerization",
+      "Next.js & TypeScript",
+      "System Architecture",
+      "Performance Optimization",
+      "API Design"
+    ]
+  },
+  "bridge": {
+    "title": "Bridge Between Worlds",
+    "skills": [
+      "UX Thinking",
+      "Technical Documentation",
+      "Team Onboarding",
+      "Systems Mindset",
+      "Cross-functional Collaboration",
+      "Technical Communication",
+      "Process Optimization",
+      "Mentorship"
+    ]
+  }
+}

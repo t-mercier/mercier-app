@@ -96,3 +96,146 @@ body {
   }
 }
 
+/* Terminal Styles */
+.terminal {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  line-height: 1.4;
+}
+
+/* Terminal Themes */
+.theme-green {
+  --terminal-color: #00ff7f;
+  --terminal-bg: #000000;
+}
+
+.theme-amber {
+  --terminal-color: #ffcc66;
+  --terminal-bg: #000000;
+}
+
+.theme-ice {
+  --terminal-color: #9be7ff;
+  --terminal-bg: #000000;
+}
+
+.theme-green {
+  --tw-text-hacker-green: var(--terminal-color);
+}
+
+.theme-amber {
+  --tw-text-amber: var(--terminal-color);
+}
+
+.theme-ice {
+  --tw-text-ice: var(--terminal-color);
+}
+
+/* CRT Scanlines for terminal */
+.crt-scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 127, 0.03) 2px,
+    rgba(0, 255, 127, 0.03) 4px
+  );
+  animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* Chaos mode effects */
+.chaos-mode {
+  animation: chaos 0.1s linear infinite;
+}
+
+.chaos-text {
+  animation: chaos-text 0.05s linear infinite;
+}
+
+@keyframes chaos {
+  0%, 100% {
+    filter: hue-rotate(0deg) saturate(1);
+    transform: translate(0);
+  }
+  25% {
+    filter: hue-rotate(90deg) saturate(2);
+    transform: translate(1px, -1px);
+  }
+  50% {
+    filter: hue-rotate(180deg) saturate(0.5);
+    transform: translate(-1px, 1px);
+  }
+  75% {
+    filter: hue-rotate(270deg) saturate(1.5);
+    transform: translate(1px, 1px);
+  }
+}
+
+@keyframes chaos-text {
+  0%, 100% {
+    transform: translate(0) rotate(0deg);
+  }
+  25% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 1px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .crt-effect::after,
+  .crt-scanlines,
+  .chaos-mode,
+  .chaos-text {
+    animation: none !important;
+  }
+  
+  .crt-effect::before {
+    background: none !important;
+  }
+}
+
+/* Terminal scrollbar */
+.terminal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.terminal::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 127, 0.3);
+  border-radius: 4px;
+}
+
+.terminal::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 127, 0.5);
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

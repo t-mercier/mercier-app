@@ -1,0 +1,67 @@
+[
+  {
+    "period": "2024 - Present",
+    "role": "Senior Software Engineer",
+    "company": "TomTom",
+    "location": "Amsterdam, Netherlands",
+    "description": "Building core navigation services and routing algorithms for TomTom's platform, focusing on performance and scalability.",
+    "highlights": [
+      "High-performance C++ development",
+      "Microservice architecture design",
+      "gRPC and Protobuf implementation",
+      "CI/CD pipeline optimization"
+    ]
+  },
+  {
+    "period": "2022 - 2024",
+    "role": "Student & Peer Mentor",
+    "company": "42 School (Codam)",
+    "location": "Amsterdam, Netherlands",
+    "description": "Intensive coding bootcamp with focus on low-level programming, algorithms, and peer-to-peer learning.",
+    "highlights": [
+      "C and C++ system programming",
+      "Algorithm design and optimization",
+      "Network programming and protocols",
+      "Peer mentoring and collaborative learning"
+    ]
+  },
+  {
+    "period": "2023",
+    "role": "Technical Lead",
+    "company": "Unity Map Visualization",
+    "location": "Remote",
+    "description": "Led development of Unity-based 3D map visualization engine for mobile devices.",
+    "highlights": [
+      "Unity engine optimization",
+      "Custom shader development",
+      "Mobile performance tuning",
+      "GIS data integration"
+    ]
+  },
+  {
+    "period": "2018 - 2022",
+    "role": "Creative Director",
+    "company": "Various Projects",
+    "location": "Amsterdam, Netherlands",
+    "description": "Art direction and creative strategy for events, brands, and experiential projects.",
+    "highlights": [
+      "Large-scale event design",
+      "Brand identity development",
+      "Cross-cultural creative projects",
+      "Storytelling and narrative design"
+    ]
+  },
+  {
+    "period": "2016 - 2018",
+    "role": "Design & Development",
+    "company": "Freelance",
+    "location": "Amsterdam, Netherlands",
+    "description": "Early career exploring the intersection of design and technology.",
+    "highlights": [
+      "Web development and design",
+      "Creative coding projects",
+      "Event experience design",
+      "Building technical foundation"
+    ]
+  }
+]

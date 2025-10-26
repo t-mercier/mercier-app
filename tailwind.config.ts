@@ -10,10 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         hacker: {
-          green: "#00ff00",
+          green: "#00ff7f",
           darkGreen: "#003300",
           black: "#000000",
         },
+        amber: "#ffcc66",
+        ice: "#9be7ff",
       },
       fontFamily: {
         mono: ["Fira Code", "monospace"],

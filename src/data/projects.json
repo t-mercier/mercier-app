@@ -1,0 +1,62 @@
+[
+  {
+    "title": "TomTom Navigation Platform",
+    "role": "Senior Software Engineer",
+    "period": "2024 - Present",
+    "stack": ["C++", "Java", "gRPC", "Protobuf", "Docker", "CI/CD"],
+    "highlights": [
+      "Building core navigation services for millions of users",
+      "Implementing high-performance routing algorithms",
+      "Designing scalable microservice architecture"
+    ],
+    "description": "Working on the core navigation platform that powers TomTom's consumer and enterprise products, focusing on performance, scalability, and reliability."
+  },
+  {
+    "title": "Unity Map Visualization Engine",
+    "role": "Technical Lead",
+    "period": "2023",
+    "stack": ["Unity", "C#", "C++", "OpenGL", "GIS"],
+    "highlights": [
+      "Real-time 3D map rendering for mobile devices",
+      "Custom shader development for terrain visualization",
+      "Integration with mapping APIs and data sources"
+    ],
+    "description": "Led development of a Unity-based engine for interactive 3D map visualization, optimized for mobile performance and cross-platform compatibility."
+  },
+  {
+    "title": "42 School Projects",
+    "role": "Student & Peer Mentor",
+    "period": "2022 - 2024",
+    "stack": ["C", "C++", "Shell", "Docker", "Networking"],
+    "highlights": [
+      "Low-level system programming and algorithms",
+      "Network protocols and socket programming",
+      "Peer-to-peer learning and mentoring system"
+    ],
+    "description": "Intensive coding bootcamp focusing on low-level programming, algorithms, and collaborative learning through peer mentoring."
+  },
+  {
+    "title": "Creative Direction & Events",
+    "role": "Creative Director",
+    "period": "2018 - 2022",
+    "stack": ["Design Systems", "Event Management", "Brand Strategy"],
+    "highlights": [
+      "Art direction for large-scale events and experiences",
+      "Brand identity development and storytelling",
+      "Cross-cultural creative projects"
+    ],
+    "description": "Led creative direction for events and brand experiences, combining technical thinking with artistic vision to create memorable user experiences."
+  },
+  {
+    "title": "mercier.app",
+    "role": "Full-Stack Developer",
+    "period": "2024",
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    "highlights": [
+      "Interactive terminal interface with command system",
+      "Responsive design with accessibility features",
+      "Creative hacking-themed user experience"
+    ],
+    "description": "Personal portfolio site featuring an interactive terminal interface that showcases both technical skills and creative design thinking."
+  }
+]

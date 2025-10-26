@@ -3,12 +3,22 @@
 import React, { useState } from "react";
 import LandingSplash from "@/components/LandingSplash";
 import HackerOverlay from "@/components/HackerOverlay";
-import CVSection from "@/components/CVSection";
+import dynamic from 'next/dynamic';
 
-type AppState = "landing" | "hacking" | "cv";
+const Terminal = dynamic(() => import('@/components/terminal/Terminal'), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="text-hacker-green font-mono">Loading terminal...</div>
+    </div>
+  )
+});
+
+type AppState = "landing" | "hacking" | "terminal";
 
 export default function Home() {
-  const [state, setState] = useState<AppState>("landing");
+  // TEMPORARY: Skip prank and go straight to terminal
+  const [state, setState] = useState<AppState>("terminal");
 
   const handleEnter = () => {
     // Request fullscreen
@@ -24,11 +34,23 @@ export default function Home() {
   };
 
   const handleReveal = () => {
-    setState("cv");
+    // Exit fullscreen when showing terminal
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch((err) => {
+        console.log("Exit fullscreen failed:", err);
+      });
+    }
+    setState("terminal");
   };
 
   const handleEscape = () => {
-    setState("cv");
+    // Exit fullscreen when showing terminal
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch((err) => {
+        console.log("Exit fullscreen failed:", err);
+      });
+    }
+    setState("terminal");
   };
 
   return (
@@ -37,7 +59,7 @@ export default function Home() {
       {state === "hacking" && (
         <HackerOverlay onReveal={handleReveal} onEscape={handleEscape} />
       )}
-      {state === "cv" && <CVSection />}
+      {state === "terminal" && <Terminal />}
     </>
   );
 }
