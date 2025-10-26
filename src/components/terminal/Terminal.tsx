@@ -208,7 +208,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
           {state.output.length === 0 && (
             <div className="space-y-2">
               <div className="text-hacker-green font-bold">
-                Welcome to mercier.app terminal
+                shell-session@mercier.app:~$
               </div>
               <div className="text-gray-300">
                 Type <span 
