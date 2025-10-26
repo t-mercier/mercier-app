@@ -215,11 +215,7 @@ export default function Terminal({ className = '' }: TerminalProps) {
           {state.output.length === 0 && (
             <div className="space-y-2">
               <div className="font-bold" style={{ color: getThemeColor() }}>
-                mercier.app@git add -A && git commit -m "fix: make welcome message and help link use dynamic theme colors
-
-- Welcome message title now uses getThemeColor() instead of hardcoded green
-- Help link color and hover background now adapt to theme
-- All colors now properly update when theme changes without hover" && git push:~$
+                mercier.app@:~$
               </div>
               <div className="text-gray-300">
                 Type <span 
