@@ -20,8 +20,7 @@ const Terminal = dynamicImport(() => import('@/components/terminal/Terminal'), {
 type AppState = "landing" | "hacking" | "terminal";
 
 export default function Home() {
-  // TEMPORARY: Skip prank and go straight to terminal
-  const [state, setState] = useState<AppState>("terminal");
+  const [state, setState] = useState<AppState>("landing");
 
   const handleEnter = () => {
     // Request fullscreen
