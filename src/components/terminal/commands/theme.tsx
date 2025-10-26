@@ -48,7 +48,7 @@ const theme: Command = {
               ></span>
               <span 
                 className="font-mono"
-                style={{ color: getThemeColor(ctx.theme) }}
+                style={{ color: themeOption.color }}
               >
                 {themeOption.name}
               </span>
