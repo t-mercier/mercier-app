@@ -45,16 +45,16 @@ export default function CVSection() {
               About Me
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Design has always been my first love, but I've always struggled with its subjectivity. I quickly realized I wouldn't be satisfied just executing someone else's vision, nor did I have the patience to build a name for myself to earn creative freedom.
+              Design has always been my first love, but I&apos;ve always struggled with its subjectivity. I quickly realized I wouldn&apos;t be satisfied just executing someone else&apos;s vision, nor did I have the patience to build a name for myself to earn creative freedom.
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
-              The binary nature of computers always attracted me - things either work, or they don't, and when they don't, you can fix it. There is always a way to make it work, and there is no room for subjectivity. So that's what I decided to focus on.
+              The binary nature of computers always attracted me - things either work, or they don&apos;t, and when they don&apos;t, you can fix it. There is always a way to make it work, and there is no room for subjectivity. So that&apos;s what I decided to focus on.
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
               To acquire the broadest skills range, I thought it would be best to learn from the root. I love a good challenge but I also wanted to mostly be capable of coding with any language later, so I chose C and C++, and enrolled in Codam, 42 Amsterdam for this intense journey.
             </p>
             <p className="text-gray-300 leading-relaxed mt-3">
-              So far, this career transition has been incredibly rewarding. Working on various projects, I've found some kind of harmony between design thinking and binary logic, and realized how my creative thinking will be a significant asset in programming.
+              So far, this career transition has been incredibly rewarding. Working on various projects, I&apos;ve found some kind of harmony between design thinking and binary logic, and realized how my creative thinking will be a significant asset in programming.
             </p>
           </div>
 
@@ -101,7 +101,7 @@ export default function CVSection() {
                   <span className="text-gray-400 text-sm">Dec 2022</span>
                 </div>
                 <p className="text-gray-300 text-sm">
-                  Master Level Challenge 3 - Built a solution for truck drivers' safety and efficiency with route optimization, QR codes, and mobile apps.
+                  Master Level Challenge 3 - Built a solution for truck drivers&apos; safety and efficiency with route optimization, QR codes, and mobile apps.
                 </p>
               </div>
               <div className="bg-gray-700/30 rounded-lg p-4 border border-gray-600">
