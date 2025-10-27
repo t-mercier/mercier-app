@@ -1,67 +1,99 @@
 [
   {
-    "period": "2024 - Present",
-    "role": "Senior Software Engineer",
+    "period": "août 2025 - Present",
+    "role": "Software Engineer II - Visualization Engines (Medior)",
     "company": "TomTom",
-    "location": "Amsterdam, Netherlands",
-    "description": "Building core navigation services and routing algorithms for TomTom's platform, focusing on performance and scalability.",
+    "location": "Amsterdam Area",
+    "description": "Develop and maintain TomTom premium map display for Unity plugin, implementing cross-platform features bridging rendering and business logic.",
     "highlights": [
-      "High-performance C++ development",
-      "Microservice architecture design",
-      "gRPC and Protobuf implementation",
-      "CI/CD pipeline optimization"
+      "Unity - Android apps development (mobile demo and automotive navigation)",
+      "C++, Kotlin, Unity, gRPC, Protocol Buffers",
+      "Android SDK, Conan, Artifactory",
+      "Technical debt management and code maintainability",
+      "Agile processes and workflow improvements"
     ]
   },
   {
-    "period": "2022 - 2024",
-    "role": "Student & Peer Mentor",
-    "company": "42 School (Codam)",
+    "period": "décembre 2024 - juillet 2025",
+    "role": "Software Engineer I - Visualization Engines (Junior)",
+    "company": "TomTom",
+    "location": "Amsterdam Area",
+    "description": "Junior role in visualization engines team, focusing on Unity plugin development and cross-platform features.",
+    "highlights": [
+      "Unity plugin development",
+      "Cross-platform mobile and automotive navigation",
+      "Android Studio/Kotlin integration",
+      "Developer documentation and onboarding processes"
+    ]
+  },
+  {
+    "period": "avril 2024 - septembre 2024",
+    "role": "Embedded Software Engineer",
+    "company": "TomTom",
+    "location": "Amsterdam, Netherlands",
+    "description": "Develop and maintain Android-based navigation app for TomTom Personal Navigation Devices.",
+    "highlights": [
+      "Android-based navigation app development",
+      "ADB and Java for debugging and feature implementation",
+      "Gerrit code reviews and Jenkins CI/CD",
+      "Docker images and Artifactory SaaS",
+      "Jira ticket management and bug resolution"
+    ]
+  },
+  {
+    "period": "octobre 2021 - décembre 2023",
+    "role": "Student",
+    "company": "42 The Network (Codam)",
     "location": "Amsterdam, Netherlands",
     "description": "Intensive coding bootcamp with focus on low-level programming, algorithms, and peer-to-peer learning.",
     "highlights": [
       "C and C++ system programming",
       "Algorithm design and optimization",
       "Network programming and protocols",
-      "Peer mentoring and collaborative learning"
+      "Peer-to-peer learning methodology",
+      "Computer Software Engineering fundamentals"
     ]
   },
   {
-    "period": "2023",
-    "role": "Technical Lead",
-    "company": "Unity Map Visualization",
-    "location": "Remote",
-    "description": "Led development of Unity-based 3D map visualization engine for mobile devices.",
-    "highlights": [
-      "Unity engine optimization",
-      "Custom shader development",
-      "Mobile performance tuning",
-      "GIS data integration"
-    ]
-  },
-  {
-    "period": "2018 - 2022",
+    "period": "juillet 2018 - mai 2019",
     "role": "Creative Director",
-    "company": "Various Projects",
-    "location": "Amsterdam, Netherlands",
-    "description": "Art direction and creative strategy for events, brands, and experiential projects.",
+    "company": "Ad Astra Institute",
+    "location": "Melbourne",
+    "description": "Headed a team at Ad Astra Culinary Institute as Creative Director, working on design and copywriting for promotional content.",
     "highlights": [
-      "Large-scale event design",
-      "Brand identity development",
-      "Cross-cultural creative projects",
-      "Storytelling and narrative design"
+      "Team leadership and creative direction",
+      "Design and copywriting for promotional content",
+      "Strategic presentation methods",
+      "Production timeline management",
+      "Teamwork and project management"
     ]
   },
   {
-    "period": "2016 - 2018",
-    "role": "Design & Development",
-    "company": "Freelance",
-    "location": "Amsterdam, Netherlands",
-    "description": "Early career exploring the intersection of design and technology.",
+    "period": "octobre 2013 - octobre 2014",
+    "role": "Founder",
+    "company": "Excess Events",
+    "location": "Freelance",
+    "description": "Founded Excess Events, specializing in cosplay shows and themed events. Handled all aspects of event planning and creative direction.",
     "highlights": [
-      "Web development and design",
-      "Creative coding projects",
-      "Event experience design",
-      "Building technical foundation"
+      "Event planning and logistics coordination",
+      "Budget management and vendor negotiations",
+      "Creative direction for atypical experiences",
+      "Freelance work for NRJ Radio's 'Angel Fantasy' fashion show",
+      "Costume design and creation"
+    ]
+  },
+  {
+    "period": "décembre 2009 - octobre 2011",
+    "role": "Fashion Editor",
+    "company": "Agence de presse Hersant Media",
+    "location": "Tahiti, French Polynesia",
+    "description": "Produced 7 fashion pages monthly, leading teams of photographers, hairdressers, makeup artists, and models.",
+    "highlights": [
+      "Monthly fashion page production",
+      "Team leadership and coordination",
+      "Model and style selection",
+      "Visual storytelling and creative direction",
+      "Project completion management"
     ]
   }
 ]

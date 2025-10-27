@@ -1,38 +1,69 @@
 [
   {
-    "title": "TomTom Navigation Platform",
-    "role": "Software Engineer II",
+    "title": "FDF - Wireframe Landscape Renderer",
+    "role": "Student Project",
+    "period": "2022",
+    "stack": ["C", "MinilibX", "3D Graphics", "Mathematics"],
+    "highlights": [
+      "Renders wireframe landscapes from .fdf files",
+      "3D transformations (rotation, translation, scaling)",
+      "Color management and depth visualization",
+      "Interactive controls for real-time manipulation"
+    ],
+    "description": "A 3D wireframe renderer built in pure C using MinilibX. Generates beautiful wireframe representations of relief landscapes with full 3D transformations, color management, and interactive controls.",
+    "images": [
+      "/projects_img/fdf1.gif",
+      "/projects_img/fdf2.gif"
+    ],
+    "github": "https://github.com/t-mercier/42_fdf"
+  },
+  {
+    "title": "Cub3D - Raycasting Engine",
+    "role": "Student Project", 
+    "period": "2022",
+    "stack": ["C", "MinilibX", "Raycasting", "Mathematics"],
+    "highlights": [
+      "Raycasting engine similar to Wolfenstein 3D",
+      "Texture mapping and sprite rendering",
+      "Map parsing and validation",
+      "Real-time 3D rendering"
+    ],
+    "description": "A raycasting engine built in C that creates a 3D perspective from a 2D map, similar to the classic Wolfenstein 3D. Features texture mapping, sprite rendering, and smooth movement.",
+    "images": [
+      "/projects_img/cub3d1.gif",
+      "/projects_img/cub3d2.gif"
+    ],
+    "github": "https://github.com/t-mercier/42_cub3d"
+  },
+  {
+    "title": "Minishell",
+    "role": "Student Project",
+    "period": "2022", 
+    "stack": ["C", "Shell Programming", "Process Management", "System Calls"],
+    "highlights": [
+      "Custom shell implementation",
+      "Command parsing and execution",
+      "Process management and pipes",
+      "Built-in commands and redirections"
+    ],
+    "description": "A custom shell implementation in C that mimics bash functionality. Handles command parsing, process management, pipes, redirections, and built-in commands.",
+    "github": "https://github.com/t-mercier/42_minishell"
+  },
+  {
+    "title": "Cabinet Dentaire Rive Droite",
+    "role": "Full-Stack Developer",
     "period": "2023",
-    "stack": ["Unity", "C#", "Kotlin", "gRPC", "Protobuf", "Docker", "CI/CD"],
+    "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Mistral AI", "Vercel", "Docker"],
     "highlights": [
-      "Real-time 3D map rendering for mobile devices",
-      "Integration with mapping APIs and data sources"
+      "Professional dental practice website with modern design",
+      "AI-powered chat integration using Mistral AI",
+      "Cloud deployment on Vercel with Docker containerization",
+      "Responsive design optimized for all devices",
+      "SEO optimized and fast loading performance"
     ],
-    "description": "Development of a Unity-based engine for interactive 3D map visualization, optimized for mobile performance and cross-platform compatibility."
-  },
-  {
-    "title": "42 School Projects",
-    "role": "Student & Peer Mentor",
-    "period": "2022 - 2024",
-    "stack": ["C", "C++", "Shell", "Docker", "Networking"],
-    "highlights": [
-      "Low-level system programming and algorithms",
-      "Network protocols and socket programming",
-      "Peer-to-peer learning and mentoring system"
-    ],
-    "description": "Intensive coding bootcamp focusing on low-level programming, algorithms, and collaborative learning through peer mentoring."
-  },
-  {
-    "title": "Creative Direction & Events",
-    "role": "Creative Director",
-    "period": "2018 - 2022",
-    "stack": ["Design Systems", "Event Management", "Brand Strategy"],
-    "highlights": [
-      "Art direction for large-scale events and experiences",
-      "Brand identity development and storytelling",
-      "Cross-cultural creative projects"
-    ],
-    "description": "Led creative direction for events and brand experiences, combining technical thinking with artistic vision to create memorable user experiences."
+    "description": "Modern dental practice website featuring AI-powered chat functionality using Mistral AI. Built with Next.js and TypeScript, deployed on Vercel with Docker containerization. Features responsive design, SEO optimization, and professional UI/UX for patient engagement.",
+    "website": "https://www.cabinetdentairerivedroite.com/",
+    "github": "https://github.com/t-mercier/cabinet-dentaire-rive-droite"
   },
   {
     "title": "mercier.app",
@@ -42,8 +73,9 @@
     "highlights": [
       "Interactive terminal interface with command system",
       "Responsive design with accessibility features",
-      "Creative hacking-themed user experience"
+      "Creative hacking-themed user experience",
+      "Portfolio showcasing design and technical skills"
     ],
-    "description": "Personal portfolio site featuring an interactive terminal interface that showcases both technical skills and creative design thinking."
+    "description": "Personal portfolio site featuring an interactive terminal interface that showcases both technical programming skills and creative design thinking, bridging the gap between design and development."
   }
 ]

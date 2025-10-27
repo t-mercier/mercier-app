@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Winner of the TomTom NEXT Hackathon - Challenge 3 in Master Level",
+    "organization": "TomTom",
+    "date": "Dec 2022",
+    "type": "🥇 First Place",
+    "description": "Worked with two other Codam students to build a solution for truck drivers' safety and efficiency during rest periods.",
+    "highlights": [
+      "Built route optimization that considers mandatory rest periods",
+      "Created a desktop interface for delivery planning",
+      "Used QR codes to sync delivery data to trucks",
+      "Made a driver app that generates routes from QR scans",
+      "Solved real logistics problems with code"
+    ],
+    "skills": ["Algorithm Design", "Full-Stack Development", "QR Code Integration", "Route Optimization", "Team Collaboration"]
+  },
+  {
+    "title": "Winner of the Instagram Content Creator Bonus Prize",
+    "organization": "TomTom NEXT Hackathon",
+    "date": "Dec 2022",
+    "type": "🥇 Bonus Prize",
+    "description": "Made the best Instagram reel during the TomTom NEXT Hackathon.",
+    "highlights": [
+      "Created engaging content about our hackathon project",
+      "Used social media to tell our technical story",
+      "Combined creativity with technical documentation"
+    ],
+    "skills": ["Content Creation", "Social Media", "Visual Storytelling", "Creative Direction"]
+  },
+  {
+    "title": "2nd Place Winner of the WE.VESTR x Codam Hackathon",
+    "organization": "WE.VESTR",
+    "date": "Nov 2022",
+    "type": "🥈 Second Place",
+    "description": "Came in second at a 36-hour hackathon, tackling challenges about making software more engaging and improving financial projections for startups.",
+    "highlights": [
+      "Built a drag-and-drop interface for custom metrics",
+      "Generated clean, professional reports",
+      "Made financial reporting easier for meetings",
+      "Extended user engagement with analytics tools",
+      "Focused on solving real business problems"
+    ],
+    "skills": ["UI/UX Design", "Financial Analytics", "Drag-and-Drop Interface", "Report Generation", "Business Analysis"]
+  }
+]

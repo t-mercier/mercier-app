@@ -27,7 +27,7 @@ const projects: Command = {
     return (
       <div className="space-y-6">
         <div className="font-bold text-hacker-green text-lg">
-          Selected Projects {filter && `(filtered by "${filter}")`}
+          {filter && `(filtered by "${filter}")`}
         </div>
         <div className="space-y-4">
           {filteredProjects.map((project, index) => (
@@ -50,6 +50,40 @@ const projects: Command = {
                 <div className="text-gray-400 text-sm">
                   <span className="text-hacker-green">Stack:</span> {project.stack.join(', ')}
                 </div>
+                {project.images && project.images.length > 0 && (
+                  <div className="flex gap-2 mt-2">
+                    {project.images.map((image, imgIndex) => (
+                      <div key={imgIndex} className="relative inline-block">
+                        <img
+                          src={image}
+                          alt={`${project.title} demo ${imgIndex + 1}`}
+                          className="w-32 h-24 object-cover rounded border border-gray-600 hover:border-green-400 transition-all duration-300 cursor-pointer hover:scale-105 hover:z-10 hover:shadow-lg"
+                          style={{ imageRendering: 'pixelated' }}
+                          onMouseEnter={(e) => {
+                            const popup = e.currentTarget.nextElementSibling;
+                            if (popup) popup.style.opacity = '1';
+                          }}
+                          onMouseLeave={(e) => {
+                            const popup = e.currentTarget.nextElementSibling;
+                            if (popup) popup.style.opacity = '0';
+                          }}
+                        />
+                        {/* Large preview on hover */}
+                        <div 
+                          className="absolute top-0 left-full ml-4 w-[800px] h-[600px] transition-opacity duration-300 pointer-events-none z-50"
+                          style={{ opacity: 0 }}
+                        >
+                          <img
+                            src={image}
+                            alt={`${project.title} demo ${imgIndex + 1} - enlarged`}
+                            className="w-full h-full object-cover rounded-lg shadow-2xl"
+                            style={{ imageRendering: 'pixelated' }}
+                          />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 <div className="space-y-1">
                   {project.highlights.map((highlight, hIndex) => (
                     <div key={hIndex} className="text-gray-300 text-sm ml-2">
@@ -57,6 +91,30 @@ const projects: Command = {
                     </div>
                   ))}
                 </div>
+                {(project.github || project.website) && (
+                  <div className="flex gap-3 mt-2">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-400 hover:text-blue-300 text-sm underline"
+                      >
+                        📁 GitHub
+                      </a>
+                    )}
+                    {project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-green-400 hover:text-green-300 text-sm underline"
+                      >
+                        🌐 Website
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}

@@ -1,42 +1,63 @@
 {
-  "design": {
-    "title": "Design & Creative Direction",
-    "skills": [
-      "Art Direction",
-      "Branding & Identity",
-      "Event Experience Design",
-      "Storytelling & Narrative",
-      "Visual Communication",
-      "User Experience Design",
-      "Creative Strategy"
-    ]
-  },
-  "engineering": {
-    "title": "Engineering & Development",
+  "programming": {
+    "title": "Programming & Development",
     "skills": [
       "C & C++",
       "Java",
+      "Kotlin",
       "Unity Engine",
-      "gRPC & Protobuf",
-      "CI/CD & DevOps",
-      "Docker & Containerization",
+      "Android SDK",
+      "gRPC & Protocol Buffers",
       "Next.js & TypeScript",
-      "System Architecture",
-      "Performance Optimization",
-      "API Design"
+      "Shell Scripting",
+      "Docker & Containerization",
+      "Jenkins CI/CD",
+      "Gradle Build System"
     ]
   },
-  "bridge": {
-    "title": "Bridge Between Worlds",
+  "design": {
+    "title": "Design & Creative Direction",
     "skills": [
-      "UX Thinking",
-      "Technical Documentation",
-      "Team Onboarding",
-      "Systems Mindset",
+      "Creative Direction",
+      "Team Leadership",
+      "Event Planning & Management",
+      "Visual Storytelling",
+      "Fashion Editing",
+      "Costume Design",
+      "Brand Strategy",
+      "Project Management",
+      "Copywriting",
+      "Visual Communication"
+    ]
+  },
+  "tools": {
+    "title": "Tools & Technologies",
+    "skills": [
+      "Unity",
+      "Android Studio",
+      "ADB Debugging",
+      "Gerrit Code Review",
+      "Artifactory",
+      "Conan Package Manager",
+      "Jira Project Management",
+      "Final Cut Pro",
+      "Photoshop",
+      "InDesign"
+    ]
+  },
+  "soft_skills": {
+    "title": "Soft Skills & Leadership",
+    "skills": [
+      "Non-linear Thinking",
+      "Detail-oriented",
+      "Hyper-focus",
+      "Team Coordination",
       "Cross-functional Collaboration",
-      "Technical Communication",
-      "Process Optimization",
-      "Mentorship"
+      "Technical Documentation",
+      "Mentorship",
+      "Problem Solving",
+      "Resilience",
+      "Empathetic Communication"
     ]
   }
 }

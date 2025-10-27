@@ -4,6 +4,7 @@ import help from "./help";
 import skills from "./skills";
 import projects from "./projects";
 import timeline from "./timeline";
+import achievements from "./achievements";
 import about from "./about";
 import contact from "./contact";
 import clear from "./clear";
@@ -13,7 +14,7 @@ import chaos from "./chaos";
 import quote from "./quote";
 
 export const registry = [
-  help, skills, projects, timeline, about, contact, clear, fullscreen, theme, chaos, quote,
+  help, skills, projects, timeline, achievements, about, contact, clear, fullscreen, theme, chaos, quote,
 ];
 
 export function findCommand(name: string) {
