@@ -60,11 +60,11 @@ const projects: Command = {
                           className="w-32 h-24 object-cover rounded border border-gray-600 hover:border-green-400 transition-all duration-300 cursor-pointer hover:scale-105 hover:z-10 hover:shadow-lg"
                           style={{ imageRendering: 'pixelated' }}
                           onMouseEnter={(e) => {
-                            const popup = e.currentTarget.nextElementSibling;
+                            const popup = e.currentTarget.nextElementSibling as HTMLElement;
                             if (popup) popup.style.opacity = '1';
                           }}
                           onMouseLeave={(e) => {
-                            const popup = e.currentTarget.nextElementSibling;
+                            const popup = e.currentTarget.nextElementSibling as HTMLElement;
                             if (popup) popup.style.opacity = '0';
                           }}
                         />
